@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+{% load socialaccount %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to Place Memory</h1>
+    <p class="lead">Store your memories about places you have visited.</p>
+    <hr class="my-4">
+    <a class="btn btn-primary btn-lg" href="{% provider_login_url 'google' %}" role="button">Login with Google</a>
+</div>
+{% endblock %}
