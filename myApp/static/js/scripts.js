@@ -14,7 +14,5 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             marker = L.marker([lat, lng]).addTo(map);
         }
-        document.getElementById('id_latitude').value = lat;
-        document.getElementById('id_longitude').value = lng;
     });
 });

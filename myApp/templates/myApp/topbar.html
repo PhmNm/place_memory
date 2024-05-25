@@ -1,13 +1,12 @@
-{% load static %}
-<div class="top-bar">
-    <div class="row">
-        <div class="col-6">
-            <h1 class="app-name">Place Memory App</h1>
-        </div>
-        <div class="col-6 user-info">
-                <div class="gretting"> Hello, {{user.first_name}} {{user.last_name}}</div>
-                <img class="avatar" src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="avatar">
-                <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
+<header class="topbar">
+    <div class="topbar-left">
+        <h5 class="app-name">Place Memory App</h5>
+    </div>
+    <div class="topbar-right">
+        <div class="user-info">
+            <div class="gretting"> Hello, {{user.first_name}} {{user.last_name}}</div>
+            <img class="avatar" src="{{ user.socialaccount_set.first.get_avatar_url }}" alt="avatar">
+            <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
         </div>
     </div>
-</div>
+</header>

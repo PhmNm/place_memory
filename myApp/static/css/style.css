@@ -1,19 +1,24 @@
-.top-bar {
-    max-width: 1140px;
-    margin: auto auto;
-    padding: 15px 15px;
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-
-.app-name {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
 
 .user-info {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+
+.topbar-left h5{
+    margin: 0px;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
 }
 
 img.avatar {
