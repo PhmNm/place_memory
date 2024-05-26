@@ -11,5 +11,29 @@
         </div>
     </div>
 </div>
-<div id="map"></div>
+<div class="row">
+    <div class="col-6">
+        <div class="memories">
+            <h4>Memories</h4>
+            <span>(Click marker on map to show comments)</span>
+            {% if memories %}
+                <ul>
+                    {% for memory in memories %}
+                    <li onclick="navigateToMarker({{ memory.latitude }}, {{ memory.longitude }})">
+                        {{memory.place_name}}
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>YOU HAVE NO MEMORIES</p>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-12">
+        <div id="map"></div>
+    </div>
+</div>
 {% endblock %}

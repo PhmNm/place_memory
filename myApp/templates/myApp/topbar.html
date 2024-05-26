@@ -1,11 +1,15 @@
 <header class="topbar">
     <div class="topbar-left">
-        <h5 class="app-name">Place Memory App</h5>
+        <h5 class="app-name"><a href="{% url 'dashboard' %}">Place Memory App</a></h5>
     </div>
     <div class="topbar-right">
         <div class="user-info">
-            <div class="gretting"> Hello, {{user.first_name}} {{user.last_name}}</div>
-            <img class="avatar" src="{{ user.socialaccount_set.first.get_avatar_url }}" alt="avatar">
+            {% if not user.is_staff %}
+                <div class="greeting"> Hello, {{user.first_name}} {{user.last_name}} </div>
+                <img class="avatar" src="{{ user.socialaccount_set.first.get_avatar_url }}" alt="avatar">
+            {%else %}
+                <div class="greeting"> Hello, {{user.username}} </div>
+            {% endif %} 
             <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
         </div>
     </div>

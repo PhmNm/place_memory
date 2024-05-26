@@ -61,7 +61,7 @@ ROOT_URLCONF = 'place_memory.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'myApp' / 'templates/myApp'],
+        'DIRS': [BASE_DIR / 'myApp/templates/myApp'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,6 +122,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_ROOT = BASE_DIR / 'myApp/staticfies'
+STATICFILES_DIRS = [
+    BASE_DIR / "myApp/static/",
+]
 STATIC_URL = '/static/'
 
 # Default primary key field type
@@ -151,4 +154,6 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-SOCIALACCOUNT_LOGIN_ON_GET=True
+SOCIALACCOUNT_LOGIN_ON_GET = True
+
+SESSION_COOKIE_AGE = 3600
