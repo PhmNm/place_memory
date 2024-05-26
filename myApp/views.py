@@ -20,9 +20,8 @@ def logout_handle(request):
 @login_required
 def dashboard(request):
     memories = Memory.objects.filter(user=request.user)
-    data = list(memories.values('longitude', 'latitude', 'place_name', 'comments'))
-    context = {'memories':memories, 'data':data}
-    return render(request, 'myApp/dashboard.html', context,)
+    context = {'memories':memories}
+    return render(request, 'myApp/dashboard.html', context)
 
 @login_required
 def load_memory(request):
