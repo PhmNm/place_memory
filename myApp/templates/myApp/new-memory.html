@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="jumbotron">
+    <h4 style="text-align: center;">ADD NEW MEMORY</h4>
+</div>
+<div class="row">
+    <div class="col-6">
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <div class="btn form-btn">
+                <input type="submit" value="Add">
+                <a class='btn back-btn' href="{% url 'dashboard'%}">Cancel</a>
+            </div>
+        </form>
+    </div>
+    <div class="col-6">
+        <div id="map"></div>
+    </div>
+</div>
+
+{% endblock %}

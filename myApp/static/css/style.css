@@ -29,4 +29,39 @@ img.avatar {
     margin-right: 10px;
 }
 
+.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 #map { height: 500px; }
+
+
+input[type=submit] {
+    font-weight: bold;
+    background-color: #399;
+    border-width: 0px;
+    border-radius: 6px;
+    color: white;
+    padding: 10px 14px;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.btn.back-btn {
+    font-weight: bold;
+    background-color: white;
+    border-color: black;
+    border-radius: 6px;
+    border-width: 1px;
+    color: black;
+    padding: 10px 14px;
+    margin: auto;
+    right: 0;
+}
+
+.btn.form-btn {
+    display: flex;
+    justify-content: center;
+}

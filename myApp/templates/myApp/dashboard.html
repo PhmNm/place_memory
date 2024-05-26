@@ -2,7 +2,14 @@
 
 {% block content %}
 <div class="jumbotron">
-    <h1 class="display-4">Your Memories Here</h1>
+    <div class="menu">
+        <div class="greeting">
+            <h1 class="display-4">Your Memories Here</h1>
+        </div>
+        <div class="menu-action">
+            <a class="btn btn-primary" href="{% url 'new-memory' %}">Add New Memory</a>
+        </div>
+    </div>
 </div>
 <div id="map"></div>
 {% endblock %}
