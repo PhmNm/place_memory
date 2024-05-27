@@ -5,6 +5,10 @@
     <div class="menu">
         <div class="greeting">
             <h1 class="display-4">Your Memories Here</h1>
+            <ul class="usage">
+                <li>Click the place name to focus location on the map</li>
+                <li>Click the marker to show comments</li>
+            </ul>
         </div>
         <div class="menu-action">
             <a class="btn btn-primary" href="{% url 'new-memory' %}">Add New Memory</a>
@@ -15,7 +19,6 @@
     <div class="col-6">
         <div class="memories">
             <h4>Memories</h4>
-            <span>(Click marker on map to show comments)</span>
             {% if memories %}
                 <ul>
                     {% for memory in memories %}

@@ -59,6 +59,10 @@ h4#form-title {
     text-align: center;
 }
 
+.usage li {
+    margin-bottom: 10px;
+}
+
 .memories ul {
     padding: 0px;
     margin: 0px;
