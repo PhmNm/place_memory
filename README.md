@@ -3,6 +3,13 @@
 [![django-img]][django-url]
 ![Static Badge](https://img.shields.io/badge/django--allauth-0.63.1-brightgreen)
 
+## Key feature
+
+- Login with Google (only save email and basic info of Google account).
+- Add a new memory place by pointing the place on the map.
+- Show saved memories and click on the place name to navigate on map.
+- Click on the marker on the map to show the memory comments.
+
 ## Environment & dependencies
 
 - Pythyon: 3.9.19
@@ -28,6 +35,24 @@ pip install -r requirements.txt
 
 ## Setup project
 
+### Create OAuth 2.0 Client ID Credentials
+
+- Access: [https://console.cloud.google.com](https://console.cloud.google.com)
+- Create new project if not have yet
+- Find or search for "Credentials" in APIs & Services
+- Config "OAuth consent screen" with "External" option
+- On screen Credentials click "CREATE CREDENTIALS" -> "OAuth client ID" to create OAuth 2.0 client id
+  - Set Authorized redirect URIs as following:
+
+```code
+URIs 1:
+http://127.0.0.1:8000/accounts/google/login/callback/
+URIs 2:
+http://127.0.0.1:8000/
+```
+
+- Save and use the generated ClientId & ClientSecret for setting in database.
+
 ### Create superuser
 
 ```terminal
@@ -49,6 +74,12 @@ python manage.py migrate
   - Name: Google or any name you want
   - Client id & Secret key: your Google app OAuth 2.0 Client information or contact for my key
   - Sites: above localhost site created in Site model
+
+### In case you don't want to use "Login with Google" feature
+
+- Go into file: `myApp\templates\myApp\main.html`
+- Change href value of "Login with Google" button into "accounts/login"
+- Use the created superuser account to login the app
 
 ### Navigate to "localhost:8000/" to use app
 
